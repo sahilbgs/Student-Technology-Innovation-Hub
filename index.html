@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Technology Innovation Hub</title>
+    <meta name="description" content="A community where students explore modern technologies and build real-world innovations.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="STIH" class="logo-img">
+                <span class="logo-text">ST<span class="highlight">IH</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#problem">Why Us?</a></li>
+                <li><a href="#departments">Departments</a></li>
+                <li><a href="#activities">Activities</a></li>
+                <li><a href="#structure">Team</a></li>
+            </ul>
+            <a href="#join" class="btn-primary-sm">Join</a>
+            
+            <div class="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <canvas id="particles-canvas"></canvas>
+        <div class="hero-content">
+            <div class="tagline">From Idea to Reality</div>
+            <h1>Student Technology<br><span class="highlight">Innovation Hub</span></h1>
+            <p class="subtitle">A community of builders. Brainstorm your ideas, architect solutions, and implement them in the real world.</p>
+            <div class="hero-buttons">
+                <a href="#departments" class="btn-primary">Explore Departments <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#join" class="btn-secondary">Join Community</a>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Us</h2>
+                <div class="line"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p class="lead">The Student Technology Innovation Hub is a 100% peer-to-peer workspace. We are building a community where students brainstorm original ideas and bring them to life.</p>
+                    <p>There are no teachers and no lectures. The platform authority provides the workspace, and learners jump in, form teams, figure out technical solutions together, and implement their ideas into real-world, production-ready applications.</p>
+                    
+                    <div class="goals">
+                        <h3>Our Goals</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-lightbulb"></i> Brainstorm original tech ideas</li>
+                            <li><i class="fa-solid fa-laptop-code"></i> Implement solutions side-by-side</li>
+                            <li><i class="fa-solid fa-earth-americas"></i> Release functioning products to the real world</li>
+                            <li><i class="fa-solid fa-briefcase"></i> Gain simulated work experience</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="stat-item fade-in">
+                            <i class="fa-solid fa-users"></i>
+                            <div class="counter" data-target="500">0</div>
+                            <p>Members</p>
+                        </div>
+                        <div class="stat-item fade-in">
+                            <i class="fa-solid fa-diagram-project"></i>
+                            <div class="counter" data-target="50">0</div>
+                            <p>Projects</p>
+                        </div>
+                        <div class="stat-item fade-in">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            <div class="counter" data-target="30">0</div>
+                            <p>Events</p>
+                        </div>
+                        <div class="stat-item fade-in">
+                            <i class="fa-solid fa-layer-group"></i>
+                            <div class="counter" data-target="6">0</div>
+                            <p>Departments</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Statement Section -->
+    <section id="problem" class="section alt-bg">
+        <div class="container">
+            <div class="section-header centered">
+                <h2>The Challenge</h2>
+                <div class="line mx-auto"></div>
+                <p>Why we created this hub</p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card hover-lift">
+                    <div class="icon-wrap"><i class="fa-solid fa-laptop-code"></i></div>
+                    <h3>Lack of Experience</h3>
+                    <p>Students often graduate with theoretical knowledge but lack practical coding experience in modern tech stacks.</p>
+                </div>
+                <div class="problem-card hover-lift">
+                    <div class="icon-wrap"><i class="fa-solid fa-globe"></i></div>
+                    <h3>Limited Exposure</h3>
+                    <p>Limited opportunities to work on real-world projects that solve actual problems and add value to resumes.</p>
+                </div>
+                <div class="problem-card hover-lift">
+                    <div class="icon-wrap"><i class="fa-solid fa-people-group"></i></div>
+                    <h3>No Network</h3>
+                    <p>Absence of a collaborative environment to build teamwork skills and learn from peers and mentors.</p>
+                </div>
+                <div class="problem-card hover-lift">
+                    <div class="icon-wrap"><i class="fa-solid fa-book-open-reader"></i></div>
+                    <h3>Outdated Curriculums</h3>
+                    <p>Traditional learning methods often trail behind the rapidly evolving landscape of modern technologies.</p>
+                </div>
+            </div>
+            
+            <div class="solution-banner">
+                <div class="glass-banner">
+                    <h3><span class="highlight">Our Solution:</span> Stop just watching tutorials. Start doing real work.</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Departments Section -->
+    <section id="departments" class="section">
+        <div class="container">
+            <div class="section-header centered">
+                <h2>Explore Departments</h2>
+                <div class="line mx-auto"></div>
+                <p>Choose your domain of expertise</p>
+            </div>
+            <div class="dept-grid">
+                <div class="dept-card">
+                    <div class="dept-icon ai"><i class="fa-solid fa-brain"></i></div>
+                    <h3>AI & Machine Learning</h3>
+                    <p style="margin-bottom: 1.5rem;">Learn how to build intelligent systems using Python, deep learning, and neural networks to solve complex problems.</p>
+                    <a href="python_roadmap.html" class="btn-secondary" style="font-size: 0.85rem; padding: 0.5rem 1rem; width: 100%;"><i class="fa-brands fa-python"></i> View Python Roadmap</a>
+                </div>
+                <div class="dept-card">
+                    <div class="dept-icon web"><i class="fa-solid fa-code"></i></div>
+                    <h3>Web Development</h3>
+                    <p>Build modern websites and robust web applications using the latest frontend and backend frameworks.</p>
+                </div>
+                <div class="dept-card">
+                    <div class="dept-icon game"><i class="fa-solid fa-gamepad"></i></div>
+                    <h3>Game Development</h3>
+                    <p>Create interactive 2D and 3D games using modern engines like Unity, focusing on mechanics and design.</p>
+                </div>
+                <div class="dept-card">
+                    <div class="dept-icon mobile"><i class="fa-brands fa-app-store-ios"></i></div>
+                    <h3>Flutter / Mobile</h3>
+                    <p>Build beautiful, natively compiled cross-platform mobile applications for Android and iOS using Flutter.</p>
+                </div>
+                <div class="dept-card">
+                    <div class="dept-icon cyber"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>Cybersecurity</h3>
+                    <p>Learn ethical hacking, penetration testing, cryptography, and system security to protect digital assets.</p>
+                </div>
+                <div class="dept-card">
+                    <div class="dept-icon crypto"><i class="fa-brands fa-ethereum"></i></div>
+                    <h3>Blockchain</h3>
+                    <p>Explore decentralized technologies, Web3 development, and write smart contracts on various blockchains.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities" class="section alt-bg">
+        <div class="container">
+            <div class="section-header">
+                <h2>What We Do</h2>
+                <div class="line"></div>
+                <p>Students take on assigned projects, engage in peer programming, compete in hackathons, and figure out complex problems together to develop functional independence.</p>
+            </div>
+            
+            <div class="activity-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"><i class="fa-solid fa-users-viewfinder"></i></div>
+                    <div class="timeline-content">
+                        <h3>Peer Problem Solving</h3>
+                        <p>Collaborative sessions where students tackle roadblocks and learn syntax together without instructors.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"><i class="fa-solid fa-code-branch"></i></div>
+                    <div class="timeline-content">
+                        <h3>Hackathons</h3>
+                        <p>Intense, time-bound events to build innovative solutions to given problems.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"><i class="fa-solid fa-laptop-file"></i></div>
+                    <div class="timeline-content">
+                        <h3>Project Development</h3>
+                        <p>Collaborative environment to build semester-long or year-long products.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"><i class="fa-solid fa-brain"></i></div>
+                    <div class="timeline-content">
+                        <h3>Idea Brainstorming</h3>
+                        <p>Weekly sessions where students pitch, validate, and architect new real-world solutions.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"><i class="fa-solid fa-clipboard-check"></i></div>
+                    <div class="timeline-content">
+                        <h3>Authority Projects</h3>
+                        <p>The core platform authority assigns real-world project briefs and conducts rigorous code reviews.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"><i class="fa-solid fa-desktop"></i></div>
+                    <div class="timeline-content">
+                        <h3>Demo Days</h3>
+                        <p>Showcase completed projects to the wider college community and potential sponsors.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools & Technologies Section -->
+    <section id="tools" class="section">
+        <div class="container">
+            <div class="section-header centered">
+                <h2>Tools & Technologies</h2>
+                <div class="line mx-auto"></div>
+            </div>
+            
+            <div class="tech-marquee">
+                <div class="marquee-content">
+                    <div class="tech-item"><i class="fa-brands fa-python"></i><span>Python</span></div>
+                    <div class="tech-item"><i class="fa-brands fa-github"></i><span>GitHub</span></div>
+                    <div class="tech-item"><i class="fa-brands fa-html5"></i><span>HTML5</span></div>
+                    <div class="tech-item"><i class="fa-brands fa-css3-alt"></i><span>CSS3</span></div>
+                    <div class="tech-item"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
+                    <div class="tech-item"><i class="fa-brands fa-react"></i><span>React</span></div>
+                    <div class="tech-item"><i class="fa-brands fa-node-js"></i><span>Node.js</span></div>
+                    <div class="tech-item"><i class="fa-brands fa-unity"></i><span>Unity</span></div>
+                    <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" class="tech-svg"/><span>Flutter</span></div>
+                    <div class="tech-item"><i class="fa-brands fa-ethereum"></i><span>Ethereum</span></div>
+                    <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kaggle/kaggle-original.svg" alt="Kaggle" class="tech-svg"/><span>Kaggle</span></div>
+                    <!-- Duplicate for infinite scroll effect -->
+                    <div class="tech-item"><i class="fa-brands fa-python"></i><span>Python</span></div>
+                    <div class="tech-item"><i class="fa-brands fa-github"></i><span>GitHub</span></div>
+                    <div class="tech-item"><i class="fa-brands fa-html5"></i><span>HTML5</span></div>
+                    <div class="tech-item"><i class="fa-brands fa-css3-alt"></i><span>CSS3</span></div>
+                    <div class="tech-item"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
+                    <div class="tech-item"><i class="fa-brands fa-react"></i><span>React</span></div>
+                    <div class="tech-item"><i class="fa-brands fa-node-js"></i><span>Node.js</span></div>
+                    <div class="tech-item"><i class="fa-brands fa-unity"></i><span>Unity</span></div>
+                    <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" class="tech-svg"/><span>Flutter</span></div>
+                    <div class="tech-item"><i class="fa-brands fa-ethereum"></i><span>Ethereum</span></div>
+                    <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kaggle/kaggle-original.svg" alt="Kaggle" class="tech-svg"/><span>Kaggle</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Club Structure Section -->
+    <section id="structure" class="section alt-bg">
+        <div class="container">
+            <div class="section-header centered">
+                <h2>Club Structure</h2>
+                <div class="line mx-auto"></div>
+                <p>How our community is organized</p>
+            </div>
+            
+            <div class="org-chart">
+                <div class="chart-level level-1">
+                    <div class="node president">
+                        <i class="fa-solid fa-crown"></i>
+                        <span>President</span>
+                    </div>
+                </div>
+                <div class="connector-vert"></div>
+                <div class="chart-level level-2">
+                    <div class="node vp">
+                        <i class="fa-solid fa-user-tie"></i>
+                        <span>Vice President</span>
+                    </div>
+                </div>
+                <div class="connector-vert"></div>
+                
+                <div class="chart-level-title">Department Leads</div>
+                <div class="connector-fork"></div>
+                
+                <div class="chart-level level-3">
+                    <div class="node lead"><i class="fa-solid fa-brain"></i> AI Lead</div>
+                    <div class="node lead"><i class="fa-solid fa-code"></i> Web Lead</div>
+                    <div class="node lead"><i class="fa-solid fa-gamepad"></i> Game Dev Lead</div>
+                    <div class="node lead"><i class="fa-brands fa-app-store-ios"></i> Flutter Lead</div>
+                    <div class="node lead"><i class="fa-solid fa-shield-halved"></i> Cyber Lead</div>
+                </div>
+                
+                <div class="connector-fork-bottom"></div>
+                <div class="connector-vert-bottom"></div>
+                
+                <div class="chart-level level-4">
+                    <div class="node members">
+                        <i class="fa-solid fa-users"></i>
+                        <span>General Members</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Section -->
+    <section id="join" class="section join-section">
+        <div class="container">
+            <div class="join-card">
+                <h2 style="font-size: 2.8rem; margin-bottom: 1.2rem;">Escape Tutorial Hell.<br><span style="color: #60a5fa;">Ship Real Products.</span></h2>
+                <p style="font-size: 1.2rem; max-width: 650px; margin: 0 auto 1rem auto; color: #e2e8f0;">Stop blindly copy-pasting code from videos. Join a team, get an authority project brief, and experience the unfiltered dopamine rush of deploying a real application to the world.</p>
+                <p class="mb-4" style="font-weight: 600; color: #fff; font-size: 1.1rem;">Build your portfolio. Get the experience. Land the job.</p>
+                <a href="#" class="btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem; border-radius: 8px; box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);"><i class="fa-solid fa-rocket"></i> Apply & Start Building</a>
+            </div>
+        </div>
+        <div class="bg-glow left"></div>
+        <div class="bg-glow right"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="images/logo.png" alt="STIH" class="logo-img">
+                        <span class="logo-text">ST<span class="highlight">IH</span></span>
+                    </div>
+                    <p>Student Technology Innovation Hub</p>
+                    <p class="tagline">Empowering the next generation of innovators</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#departments">Departments</a></li>
+                        <li><a href="#activities">Activities</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-envelope"></i> contact@stih-college.edu</li>
+                        <li><i class="fa-solid fa-location-dot"></i> College Campus, Tech Block</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Connect</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fa-brands fa-discord"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Student Technology Innovation Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
