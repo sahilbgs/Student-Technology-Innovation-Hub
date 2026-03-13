@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Student Technology Innovation Hub</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .admin-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: var(--glass-shadow);
+            overflow-x: auto;
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .stats-badge {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: var(--text-heading);
+            min-width: 800px;
+            /* Ensure horizontal scrolling on small screens */
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 1.25rem 1rem;
+            border-bottom: 1px solid var(--border-light);
+            font-size: 0.95rem;
+        }
+
+        th {
+            background-color: rgba(37, 99, 235, 0.05);
+            color: var(--primary);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        tr:hover {
+            background-color: rgba(15, 23, 42, 0.4);
+        }
+
+        .field-badge {
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--accent);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            display: inline-block;
+        }
+
+        /* Adjust hero for inner pages */
+        .page-header {
+            padding-top: 150px;
+            padding-bottom: 60px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 4rem;
+            color: var(--text-muted);
+        }
+
+        /* Password Form Styles */
+        .login-container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            box-shadow: var(--glass-shadow);
+            text-align: center;
+        }
+
+        .login-container h2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .login-container p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background-color: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            color: var(--text-light);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: var(--transition);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+            background-color: rgba(15, 23, 42, 0.8);
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .error-message {
+            color: #ef4444;
+            font-size: 0.9rem;
+            margin-top: -10px;
+            margin-bottom: 15px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav id="navbar" class="scrolled">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" style="display:flex; align-items:center; gap:10px;">
+                    <img src="images/logo.png" alt="STIH" class="logo-img">
+                    <span class="logo-text">ST<span class="highlight">IH</span></span> <span
+                        style="font-size: 0.8rem; background: var(--primary); color: white; padding: 2px 6px; border-radius: 4px; margin-left: 10px; font-weight: bold;">ADMIN</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Live Site</a></li>
+                <li><a href="registration.html">Registration Page</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <div class="tagline">Admin Dashboard</div>
+            <h1>Registered <span class="highlight">Students</span></h1>
+            <p class="subtitle" style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">View and manage all
+                students who have registered for the Hub.</p>
+        </div>
+    </div>
+
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+
+            <!-- Login Form -->
+            <div id="loginSection" class="login-container" data-tilt data-tilt-max="2" data-tilt-glare
+                data-tilt-max-glare="0.05">
+                <h2>Admin Verification</h2>
+                <p>Enter password to access dashboard</p>
+                <form id="adminLoginForm">
+                    <input type="password" id="adminPassword" class="form-control" placeholder="Enter Password"
+                        required>
+                    <div id="loginError" class="error-message">Incorrect password. Please try again.</div>
+                    <button type="submit" class="btn-primary btn-submit">
+                        <i class="fa-solid fa-lock-open"></i> Unlock Dashboard
+                    </button>
+                </form>
+            </div>
+
+            <!-- Admin Dashboard (Hidden by default) -->
+            <div id="adminPanel" class="admin-container" style="display: none;">
+
+                <div class="dashboard-header">
+                    <h2><i class="fa-solid fa-users"></i> Student Database</h2>
+                    <div class="stats-badge" id="totalCount" style="display: none;">
+                        <i class="fa-solid fa-chart-simple"></i> <span>Total: 0</span>
+                    </div>
+                </div>
+
+                <div id="loading" class="loading">
+                    <i class="fa-solid fa-spinner fa-spin fa-2x"
+                        style="color: var(--primary); margin-bottom: 15px;"></i>
+                    <p>Fetching latest registrations from Firebase...</p>
+                </div>
+
+                <div style="overflow-x: auto;">
+                    <table id="registrationsTable" style="display: none;">
+                        <thead>
+                            <tr>
+                                <th style="width: 50px;">#</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Mobile Number</th>
+                                <th>Semester</th>
+                                <th>Field of Interest</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <!-- Data injected via Firebase JS -->
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+        import { getFirestore, collection, getDocs, orderBy, query } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
+
+        // Reusing the same credentials from registration.html
+        const firebaseConfig = {
+            apiKey: "AIzaSyCby7ni6QL4H8Hh_XL52cyTHa7gWcDpNJo",
+            authDomain: "stih-83860.firebaseapp.com",
+            projectId: "stih-83860",
+            storageBucket: "stih-83860.firebasestorage.app",
+            messagingSenderId: "33641337987",
+            appId: "1:33641337987:web:d2506d75bf4af612f4f7b6"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        async function loadData() {
+            const tableBody = document.getElementById("tableBody");
+            const loadingDiv = document.getElementById("loading");
+            const table = document.getElementById("registrationsTable");
+            const totalCountBadge = document.getElementById("totalCount");
+            const totalCountSpan = totalCountBadge.querySelector('span');
+
+            try {
+                // Can add orderBy("timestamp", "desc") if timestamp is added to registration
+                const q = query(collection(db, "registrations"));
+                const querySnapshot = await getDocs(q);
+
+                let html = "";
+                let count = 0;
+
+                querySnapshot.forEach((doc) => {
+                    count++;
+                    const data = doc.data();
+
+                    html += `
+                    <tr>
+                        <td style="color: var(--text-muted); font-weight: 500;">${count}</td>
+                        <td style="font-weight: 500; color: var(--text-light);">${data.name || 'N/A'}</td>
+                        <td>
+                            <a href="mailto:${data.email}" style="color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 8px;">
+                                <i class="fa-solid fa-envelope" style="font-size: 0.9em;"></i> ${data.email || 'N/A'}
+                            </a>
+                        </td>
+                        <td>
+                            <a href="tel:${data.mobile}" style="color: var(--text-main); text-decoration: none; display: flex; align-items: center; gap: 8px;">
+                                <i class="fa-solid fa-phone" style="font-size: 0.9em;"></i> ${data.mobile || 'N/A'}
+                            </a>
+                        </td>
+                        <td><span style="color: var(--text-muted); font-weight: 500;">${data.semester ? 'Sem ' + data.semester : 'N/A'}</span></td>
+                        <td><span class="field-badge">${data.field || 'N/A'}</span></td>
+                    </tr>
+                `;
+                });
+
+                if (count === 0) {
+                    html = `
+                    <tr>
+                        <td colspan="6" style="text-align: center; padding: 3rem; color: var(--text-muted);">
+                            <i class="fa-solid fa-folder-open fa-2x" style="margin-bottom: 15px; opacity: 0.5;"></i><br>
+                            No registrations found yet.
+                        </td>
+                    </tr>
+                `;
+                }
+
+                tableBody.innerHTML = html;
+                totalCountSpan.innerText = `Total: ${count}`;
+
+                loadingDiv.style.display = "none";
+                table.style.display = "table";
+                totalCountBadge.style.display = "flex";
+
+            } catch (error) {
+                console.error("Firebase Error:", error);
+                loadingDiv.innerHTML = `
+                <i class="fa-solid fa-triangle-exclamation fa-2x" style="color: #ef4444; margin-bottom: 15px;"></i>
+                <p style="color: #ef4444;">Error fetching data: ${error.message}</p>
+            `;
+            }
+        }
+
+        // Password Authentication Logic
+        const loginForm = document.getElementById("adminLoginForm");
+        const loginSection = document.getElementById("loginSection");
+        const adminPanel = document.getElementById("adminPanel");
+        const loginError = document.getElementById("loginError");
+
+        loginForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const pwd = document.getElementById("adminPassword").value;
+
+            // Hardcoded admin password
+            if (pwd === "bts143") {
+                loginSection.style.display = "none";
+                adminPanel.style.display = "block";
+                loadData(); // Load data ONLY after successful login
+            } else {
+                loginError.style.display = "block";
+                document.getElementById("adminPassword").value = "";
+            }
+        });
+    </script>
+</body>
+
+</html>
