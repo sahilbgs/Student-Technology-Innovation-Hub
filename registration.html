@@ -259,11 +259,16 @@
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
 
-        const name = form.name.value;
-        const email = form.email.value;
-        const mobile = form.mobile.value;
+        const name = form.name.value.trim();
+        const email = form.email.value.trim();
+        const mobile = form.mobile.value.trim();
         const semester = form.semester.value;
         const field = form.field.value;
+        
+        if (!name || !email || !mobile || !semester || !field) {
+            alert("Please fill out all required fields.");
+            return;
+        }
         
         const submitBtn = form.querySelector('button[type="submit"]');
         submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Registering...';
