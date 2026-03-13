@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flutter Development Roadmap - STIH</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .roadmap-card {
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            padding: 2.5rem;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+        
+        .roadmap-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary);
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 8px;
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+
+        .roadmap-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .roadmap-header h2 {
+            margin-bottom: 0;
+            font-size: 1.5rem;
+            color: var(--text-heading);
+        }
+
+        .roadmap-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .roadmap-list li {
+            position: relative;
+            padding-left: 25px;
+            color: var(--text-main);
+        }
+
+        .roadmap-list li::before {
+            content: '\f0da';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        .project-box {
+            background-color: rgba(37, 99, 235, 0.05);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-box h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .project-box ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .project-box ul li {
+            margin-bottom: 5px;
+            position: relative;
+            padding-left: 20px;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        .project-box ul li::before {
+            content: '\f121';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-size: 0.85rem;
+        }
+
+        .usage-text {
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            background-color: var(--bg-alt);
+            padding: 10px 15px;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        .pros-cons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .pro-item, .con-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .pro-item i {
+            color: #10b981;
+            background-color: rgba(16, 185, 129, 0.1);
+            padding: 6px;
+            border-radius: 50%;
+        }
+
+        .con-item i {
+            color: #ef4444;
+            background-color: rgba(239, 68, 68, 0.1);
+            padding: 6px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <!-- 3D Neural Network Background -->
+    <div id="network-bg" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;"></div>
+
+    <!-- Navbar -->
+    <nav id="navbar" class="scrolled">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" style="display: flex; align-items: center; gap: 10px;">
+                    <img src="images/logo.png" alt="STIH" class="logo-img">
+                    <span class="logo-text">ST<span class="highlight">IH</span></span>
+                </a>
+            </div>
+            <a href="index.html" class="btn-primary-sm"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="section" style="padding-top: 140px; padding-bottom: 60px; background: transparent;">
+        <div class="container">
+            <div class="section-header centered" style="margin-bottom: 0;">
+                <div class="tagline">Learning Path</div>
+                <h2>Flutter / Mobile <span class="highlight">Roadmap</span></h2>
+                <div class="line mx-auto"></div>
+                <p>Build cross-platform Android & iOS apps - Step-by-Step Guide</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Content -->
+    <section class="section alt-bg" style="padding-top: 60px;">
+        <div class="container" style="max-width: 900px;">
+            
+            <!-- Step 1 -->
+            <div class="roadmap-card" data-tilt data-tilt-max="5" data-tilt-glare data-tilt-max-glare="0.1">
+                <div class="roadmap-header">
+                    <span class="step-number">1</span>
+                    <h2>Fundamentals</h2>
+                </div>
+                <p class="mb-4" style="color: var(--text-muted);">Understand the core concepts of mobile development and Dart.</p>
+                
+                <ul class="roadmap-list">
+                    <li>Mobile development basics</li>
+                    <li>Install Flutter SDK</li>
+                    <li>Dart programming</li>
+                    <li>Flutter project structure</li>
+                    <li>Run first app</li>
+                </ul>
+
+                <div class="project-box">
+                    <h4><i class="fa-solid fa-laptop-code"></i> Project</h4>
+                    <ul>
+                        <li>Hello World App</li>
+                        <li>Basic Counter App</li>
+                    </ul>
+                </div>
+
+                <div class="usage-text">
+                    <strong><i class="fa-solid fa-briefcase"></i> Real World Usage:</strong> Setting up the environment, writing logic in Dart.
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="roadmap-card" data-tilt data-tilt-max="5" data-tilt-glare data-tilt-max-glare="0.1">
+                <div class="roadmap-header">
+                    <span class="step-number">2</span>
+                    <h2>UI Development</h2>
+                </div>
+                <p class="mb-4" style="color: var(--text-muted);">Learn how to build beautiful interfaces.</p>
+                
+                <ul class="roadmap-list">
+                    <li>Widgets</li>
+                    <li>Layouts</li>
+                    <li>Material UI & Cupertino</li>
+                    <li>Navigation & Routing</li>
+                    <li>Responsive design</li>
+                </ul>
+
+                <div class="project-box">
+                    <h4><i class="fa-solid fa-laptop-code"></i> Project</h4>
+                    <ul>
+                        <li>Profile Page UI</li>
+                        <li>Settings Menu UI</li>
+                    </ul>
+                </div>
+
+                <div class="usage-text">
+                    <strong><i class="fa-solid fa-briefcase"></i> Real World Usage:</strong> Creating the visual layer, working with designers, pixel-perfecting UI.
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="roadmap-card" data-tilt data-tilt-max="5" data-tilt-glare data-tilt-max-glare="0.1">
+                <div class="roadmap-header">
+                    <span class="step-number">3</span>
+                    <h2>Functionality & State</h2>
+                </div>
+                <p class="mb-4" style="color: var(--text-muted);">Make your apps dynamic and functional.</p>
+                
+                <ul class="roadmap-list">
+                    <li>State management (Provider, Riverpod, Bloc)</li>
+                    <li>API integration (HTTP / Dio)</li>
+                    <li>Local storage (Shared Preferences, SQLite, Hive)</li>
+                    <li>Forms & Validation</li>
+                    <li>Error handling</li>
+                </ul>
+
+                <div class="project-box">
+                    <h4><i class="fa-solid fa-laptop-code"></i> Project</h4>
+                    <ul>
+                        <li>Todo App</li>
+                        <li>Weather App</li>
+                    </ul>
+                </div>
+
+                <div class="usage-text">
+                    <strong><i class="fa-solid fa-briefcase"></i> Real World Usage:</strong> Fetching data, managing user sessions, saving files locally.
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="roadmap-card" data-tilt data-tilt-max="5" data-tilt-glare data-tilt-max-glare="0.1">
+                <div class="roadmap-header">
+                    <span class="step-number">4</span>
+                    <h2>Advanced Capabilities</h2>
+                </div>
+                <p class="mb-4" style="color: var(--text-muted);">Unlock device hardware and system features.</p>
+                
+                <ul class="roadmap-list">
+                    <li>Authentication (Firebase / OAuth)</li>
+                    <li>Push notifications</li>
+                    <li>Hardware Access (Camera, GPS)</li>
+                    <li>Animations & Transitions</li>
+                    <li>Offline sync</li>
+                </ul>
+
+                <div class="project-box">
+                    <h4><i class="fa-solid fa-laptop-code"></i> Project</h4>
+                    <ul>
+                        <li>Expense Tracker App</li>
+                        <li>Chat App (Firebase)</li>
+                    </ul>
+                </div>
+
+                <div class="usage-text">
+                    <strong><i class="fa-solid fa-briefcase"></i> Real World Usage:</strong> Social media features, map directions, smooth 60fps animations.
+                </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="roadmap-card" data-tilt data-tilt-max="5" data-tilt-glare data-tilt-max-glare="0.1">
+                <div class="roadmap-header">
+                    <span class="step-number">5</span>
+                    <h2>Production Projects</h2>
+                </div>
+                <p class="mb-4" style="color: var(--text-muted);">Build fully-fledged, real-world applications.</p>
+                
+                <ul class="roadmap-list">
+                    <li>Large scale state management</li>
+                    <li>Performance optimization</li>
+                    <li>Monetization (Ads, In-App Purchases)</li>
+                    <li>Analytics Integration</li>
+                    <li>Testing (Unit, Widget, Integration)</li>
+                </ul>
+
+                <div class="project-box">
+                    <h4><i class="fa-solid fa-laptop-code"></i> Project</h4>
+                    <ul>
+                        <li>E-commerce App</li>
+                        <li>AI Mobile App</li>
+                    </ul>
+                </div>
+
+                <div class="usage-text">
+                    <strong><i class="fa-solid fa-briefcase"></i> Real World Usage:</strong> Large scale SaaS apps, startup MVPs.
+                </div>
+            </div>
+
+            <!-- Step 6 -->
+            <div class="roadmap-card" data-tilt data-tilt-max="5" data-tilt-glare data-tilt-max-glare="0.1">
+                <div class="roadmap-header">
+                    <span class="step-number">6</span>
+                    <h2>Deployment</h2>
+                </div>
+                <p class="mb-4" style="color: var(--text-muted);">Ship your app to the stores.</p>
+                
+                <ul class="roadmap-list">
+                    <li>Build APK / App Bundle</li>
+                    <li>Optimize app size</li>
+                    <li>Publish to Google Play Store</li>
+                    <li>Publish to Apple App Store</li>
+                    <li>App maintenance & CI/CD</li>
+                </ul>
+
+                <div class="project-box">
+                    <h4><i class="fa-solid fa-laptop-code"></i> Project</h4>
+                    <ul>
+                        <li>Release an app on App Store/Play Store</li>
+                    </ul>
+                </div>
+
+                <div class="usage-text">
+                    <strong><i class="fa-solid fa-briefcase"></i> Real World Usage:</strong> Releasing to millions of users, setting up automated build pipelines.
+                </div>
+            </div>
+
+            <!-- Career Paths -->
+            <div class="roadmap-card" style="border-color: var(--primary); background-color: var(--glass-bg);" data-tilt data-tilt-max="5" data-tilt-glare data-tilt-max-glare="0.1">
+                <div class="roadmap-header">
+                    <span class="step-number"><i class="fa-solid fa-rocket"></i></span>
+                    <h2>Final Career Paths</h2>
+                </div>
+                
+                <ul class="roadmap-list" style="margin-bottom: 0;">
+                    <li><i class="fa-solid fa-star" style="color:var(--primary); margin-right:8px;"></i> Flutter Developer</li>
+                    <li><i class="fa-solid fa-star" style="color:var(--primary); margin-right:8px;"></i> Mobile App Developer</li>
+                    <li><i class="fa-solid fa-star" style="color:var(--primary); margin-right:8px;"></i> Android/iOS Software Engineer</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="images/logo.png" alt="STIH" class="logo-img">
+                        <span class="logo-text">ST<span class="highlight">IH</span></span>
+                    </div>
+                    <p>Student Technology Innovation Hub</p>
+                    <p class="tagline">Empowering the next generation of innovators</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Student Technology Innovation Hub. All rights reserved. | Flutter Development Roadmap</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Roadmap - STIH</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .roadmap-card {
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            padding: 2.5rem;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+        
+        .roadmap-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary);
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 8px;
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+
+        .roadmap-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .roadmap-header h2 {
+            margin-bottom: 0;
+            font-size: 1.5rem;
+            color: var(--text-heading);
+        }
+
+        .roadmap-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .roadmap-list li {
+            position: relative;
+            padding-left: 25px;
+            color: var(--text-main);
+        }
+
+        .roadmap-list li::before {
+            content: '\f0da';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        .project-box {
+            background-color: rgba(37, 99, 235, 0.05);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-box h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .project-box ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .project-box ul li {
+            margin-bottom: 5px;
+            position: relative;
+            padding-left: 20px;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        .project-box ul li::before {
+            content: '\f121';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-size: 0.85rem;
+        }
+
+        .usage-text {
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            background-color: var(--bg-alt);
+            padding: 10px 15px;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        .pros-cons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .pro-item, .con-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .pro-item i {
+            color: #10b981;
+            background-color: rgba(16, 185, 129, 0.1);
+            padding: 6px;
+            border-radius: 50%;
+        }
+
+        .con-item i {
+            color: #ef4444;
+            background-color: rgba(239, 68, 68, 0.1);
+            padding: 6px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <!-- 3D Neural Network Background -->
+    <div id="network-bg" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;"></div>
+
+    <!-- Navbar -->
+    <nav id="navbar" class="scrolled">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" style="display: flex; align-items: center; gap: 10px;">
+                    <img src="images/logo.png" alt="STIH" class="logo-img">
+                    <span class="logo-text">ST<span class="highlight">IH</span></span>
+                </a>
+            </div>
+            <a href="index.html" class="btn-primary-sm"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="section" style="padding-top: 140px; padding-bottom: 60px; background: transparent;">
+        <div class="container">
+            <div class="section-header centered" style="margin-bottom: 0;">
+                <div class="tagline">Learning Path</div>
+                <h2>Cybersecurity <span class="highlight">Roadmap</span></h2>
+                <div class="line mx-auto"></div>
+                <p>From Zero to Industry-Ready Security Professional</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Content -->
+    <section class="section alt-bg" style="padding-top: 60px;">
+        <div class="container" style="max-width: 900px;">
+            
+            <!-- Step 1 -->
+            <div class="roadmap-card" data-tilt data-tilt-max="5" data-tilt-glare data-tilt-max-glare="0.1">
+                <div class="roadmap-header">
+                    <span class="step-number">1</span>
+                    <h2>Foundations & Core Concepts</h2>
+                </div>
+                <p class="mb-4" style="color: var(--text-muted);">Understand how computers, networks, and operating systems work.</p>
+                
+                <ul class="roadmap-list">
+                    <li>Networking Basics (OSI, TCP/IP, DNS)</li>
+                    <li>Linux & Command Line</li>
+                    <li>Windows Internals (AD, PowerShell)</li>
+                    <li>Cryptography Basics</li>
+                    <li>Programming for Security (Python)</li>
+                </ul>
+
+                <div class="project-box">
+                    <h4><i class="fa-solid fa-laptop-code"></i> Resources</h4>
+                    <ul>
+                        <li>TryHackMe — Pre-Security</li>
+                        <li>OverTheWire: Bandit</li>
+                        <li>Linux Journey</li>
+                    </ul>
+                </div>
+
+                <div class="usage-text">
+                    <strong><i class="fa-solid fa-briefcase"></i> Real World Usage:</strong> The bedrock everything else builds on. Do not skip this phase.
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="roadmap-card" data-tilt data-tilt-max="5" data-tilt-glare data-tilt-max-glare="0.1">
+                <div class="roadmap-header">
+                    <span class="step-number">2</span>
+                    <h2>Blue Team Skills (Defending)</h2>
+                </div>
+                <p class="mb-4" style="color: var(--text-muted);">Learn to defend systems — the skill most employers need.</p>
+                
+                <ul class="roadmap-list">
+                    <li>SOC Operations (SIEM, Splunk)</li>
+                    <li>Network Traffic Analysis (Wireshark)</li>
+                    <li>Malware Analysis Basics</li>
+                    <li>MITRE ATT&CK Framework</li>
+                    <li>Vulnerability Management</li>
+                </ul>
+
+                <div class="project-box">
+                    <h4><i class="fa-solid fa-laptop-code"></i> Resources</h4>
+                    <ul>
+                        <li>CompTIA Security+</li>
+                        <li>TryHackMe — SOC Level 1</li>
+                        <li>Blue Team Labs Online</li>
+                    </ul>
+                </div>
+
+                <div class="usage-text">
+                    <strong><i class="fa-solid fa-briefcase"></i> Real World Usage:</strong> Defending enterprise networks, the most common entry point.
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="roadmap-card" data-tilt data-tilt-max="5" data-tilt-glare data-tilt-max-glare="0.1">
+                <div class="roadmap-header">
+                    <span class="step-number">3</span>
+                    <h2>Offensive Security & Ethical Hacking</h2>
+                </div>
+                <p class="mb-4" style="color: var(--text-muted);">Learn to think like an attacker.</p>
+                
+                <ul class="roadmap-list">
+                    <li>Pentest Methodology</li>
+                    <li>Recon & Scanning (Nmap, OSINT)</li>
+                    <li>Exploitation Frameworks (Metasploit)</li>
+                    <li>Web Application Hacking (OWASP)</li>
+                    <li>Privilege Escalation</li>
+                </ul>
+
+                <div class="project-box">
+                    <h4><i class="fa-solid fa-laptop-code"></i> Resources</h4>
+                    <ul>
+                        <li>eJPT (eLearnSecurity)</li>
+                        <li>HackTheBox — Starting Point</li>
+                        <li>PortSwigger Web Academy</li>
+                    </ul>
+                </div>
+
+                <div class="usage-text">
+                    <strong><i class="fa-solid fa-briefcase"></i> Real World Usage:</strong> Penetration testing, vulnerability assessments, red teaming.
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="roadmap-card" data-tilt data-tilt-max="5" data-tilt-glare data-tilt-max-glare="0.1">
+                <div class="roadmap-header">
+                    <span class="step-number">4</span>
+                    <h2>Specialization & Advanced Skills</h2>
+                </div>
+                <p class="mb-4" style="color: var(--text-muted);">Pick a lane based on your interests and the job market.</p>
+                
+                <ul class="roadmap-list">
+                    <li>Cloud Security (AWS/Azure/GCP)</li>
+                    <li>Threat Hunting (KQL/SPL)</li>
+                    <li>Malware Reverse Engineering</li>
+                    <li>Red Teaming (Cobalt Strike)</li>
+                    <li>Digital Forensics (DFIR)</li>
+                </ul>
+
+                <div class="project-box">
+                    <h4><i class="fa-solid fa-laptop-code"></i> Resources</h4>
+                    <ul>
+                        <li>OSCP (Offensive Security)</li>
+                        <li>AWS Security Specialty</li>
+                        <li>SC-200 (Microsoft)</li>
+                    </ul>
+                </div>
+
+                <div class="usage-text">
+                    <strong><i class="fa-solid fa-briefcase"></i> Real World Usage:</strong> Mid-to-senior level specialized enterprise roles.
+                </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="roadmap-card" data-tilt data-tilt-max="5" data-tilt-glare data-tilt-max-glare="0.1">
+                <div class="roadmap-header">
+                    <span class="step-number">5</span>
+                    <h2>Portfolio & Job Readiness</h2>
+                </div>
+                <p class="mb-4" style="color: var(--text-muted);">Turn skills into proof.</p>
+                
+                <ul class="roadmap-list">
+                    <li>Home Lab Setup</li>
+                    <li>Portfolio Building (Writeups, Blogs)</li>
+                    <li>Bug Bounty Programs (HackerOne)</li>
+                    <li>Community Networking (DEF CON)</li>
+                </ul>
+
+                <div class="project-box">
+                    <h4><i class="fa-solid fa-laptop-code"></i> Projects</h4>
+                    <ul>
+                        <li>HackTheBox Rank</li>
+                        <li>Writeups on Medium / GitHub</li>
+                        <li>Bug Bounty Triage Reports</li>
+                    </ul>
+                </div>
+
+                <div class="usage-text">
+                    <strong><i class="fa-solid fa-briefcase"></i> Real World Usage:</strong> Getting hired. A strong CTF profile often beats a resume full of certs.
+                </div>
+            </div>
+
+            <!-- Career Paths -->
+            <div class="roadmap-card" style="border-color: var(--primary); background-color: var(--glass-bg);" data-tilt data-tilt-max="5" data-tilt-glare data-tilt-max-glare="0.1">
+                <div class="roadmap-header">
+                    <span class="step-number"><i class="fa-solid fa-rocket"></i></span>
+                    <h2>Final Career Paths</h2>
+                </div>
+                
+                <ul class="roadmap-list" style="margin-bottom: 0;">
+                    <li><i class="fa-solid fa-star" style="color:var(--primary); margin-right:8px;"></i> Security Operations Center (SOC) Analyst</li>
+                    <li><i class="fa-solid fa-star" style="color:var(--primary); margin-right:8px;"></i> Penetration Tester</li>
+                    <li><i class="fa-solid fa-star" style="color:var(--primary); margin-right:8px;"></i> Cloud Security Engineer</li>
+                    <li><i class="fa-solid fa-star" style="color:var(--primary); margin-right:8px;"></i> Incident Responder (DFIR)</li>
+                    <li><i class="fa-solid fa-star" style="color:var(--primary); margin-right:8px;"></i> DevSecOps Engineer</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="images/logo.png" alt="STIH" class="logo-img">
+                        <span class="logo-text">ST<span class="highlight">IH</span></span>
+                    </div>
+                    <p>Student Technology Innovation Hub</p>
+                    <p class="tagline">Empowering the next generation of innovators</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Student Technology Innovation Hub. All rights reserved. | Cybersecurity Roadmap</p>
+                <p style="margin-top: 10px; opacity: 0.7; font-size: 0.8rem;">Practice only on systems you own or have explicit permission to test.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
